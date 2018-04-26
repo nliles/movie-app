@@ -1,19 +1,19 @@
 
 import React, { Component } from 'react';
-import { addMovie } from '../actions/movieActions'
+import { searchMovies } from '../actions/movieActions'
 import { bindActionCreators } from 'redux' 
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 
   const mapDispatchToProps = dispatch => bindActionCreators({
-    addMovie, 
+    searchMovies, 
   }, dispatch)
 
 class AddMovie extends Component {
 
 	static propTypes = {
-        addMovie: PropTypes.func.isRequired,
+        searchMovies: PropTypes.func.isRequired,
     }
 
     constructor() {
@@ -23,17 +23,10 @@ class AddMovie extends Component {
         };                   
       }
 
-    componentDidMount() {
-
-    } 
-
     handleSubmit(e) {
         e.preventDefault();
-        fetch(`http://www.omdbapi.com/?apikey=ea1e135&t=${this.state.movieTerm}`)
-        .then((response) => response.json())
-        .then((movie) => {
-            this.props.addMovie(movie)
-        })
+        this.props.searchMovies(this.state.movieTerm)
+        this.setState({ movieTerm: ""});
     }
 
     handleChange(e) {
@@ -45,7 +38,7 @@ class AddMovie extends Component {
             return(
               <div className="addContainer">
                <form onSubmit={e => this.handleSubmit(e)}>
-                   <input onChange={e => this.handleChange(e)} type="text" placeholder="Add a movie"/>
+                   <input onChange={e => this.handleChange(e)} type="text" placeholder="Add a movie" value={this.state.movieTerm}/>
                    <input type="submit" id="add" className="btn btn-primary" value="Add"/>
                </form>
               </div>
