@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import ShowMovie from './components/ShowMovie';
+import ShowMovie from './containers/ShowMovie';
 import registerServiceWorker from './registerServiceWorker';
 import { render } from 'react-dom';
 import {createStore, applyMiddleware} from "redux";
@@ -13,7 +13,8 @@ import NavBar from './components/NavBar';
 import thunk from 'redux-thunk';
 
 const preloadedState = {
-    movies: []
+    movies: [],
+    movie: {}
 };
 
 const store = createStore(

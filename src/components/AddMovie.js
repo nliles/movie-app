@@ -36,12 +36,10 @@ class AddMovie extends Component {
 
     render() {
             return(
-              <div className="addContainer">
-               <form onSubmit={e => this.handleSubmit(e)}>
-                   <input onChange={e => this.handleChange(e)} type="text" placeholder="Add a movie" value={this.state.movieTerm}/>
-                   <input type="submit" id="add" className="btn btn-primary" value="Add"/>
+               <form className="flexContainer" onSubmit={e => this.handleSubmit(e)}>
+                   <input className="inputField form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" onChange={e => this.handleChange(e)} type="text" placeholder="Add a movie..." value={this.state.movieTerm}/>
+                   <button type="submit" class="btn"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
                </form>
-              </div>
           ) 
     }
     

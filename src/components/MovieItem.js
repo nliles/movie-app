@@ -6,10 +6,14 @@ class MovieItem extends Component {
   render() {
     return this.props.movies.map((movie, i) => {
       return(
-        <div key={i}>
-          <Link to={`/movies/${movie.title}`}><h3>{movie.title}</h3></Link>
-          <img src={movie.poster} alt="Movie Poster" height="42" width="42"/>
-          <button onClick={e => this.props.f(movie.title)} type="button" className="btn btn-primary">Remove</button>
+        <div className="movieItemContainer" key={i}>
+          <ul className="list-group">
+            <li className="list-group-item">
+              <img src={movie.poster} alt="Movie Poster" height="25%" width="25%"/>
+              <Link to={`/movies/${movie.title}`}><h3>{movie.title}</h3></Link>
+              <button onClick={e => this.props.removeOnClick(movie.title)} type="button" className="btn movieItemBtn"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+            </li>
+          </ul>
         </div>
       );
     });

@@ -2,19 +2,25 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getMovie } from '../actions/movieActions'
+import ShowMovieItem from '../components/ShowMovieItem';
 
 class ShowMovie extends Component {
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.getMovie(this.props.match.params.id)
     }
 
-	render() {
-        console.log(this.props.movie)
-            return(
-                <div>"test"</div>
-          ) 
+    componentWillReceiveProps = (nextProps) => {
+      console.log(nextProps)
+    }
+    
 
+	render() {
+        if(this.props.movie) {
+            return(
+                <h1>"hi"</h1>
+          ) 
+        }
    }
     
 }
