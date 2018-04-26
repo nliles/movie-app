@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import Add from '../components/Add';
+import AddMovie from '../components/AddMovie';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -30,7 +30,7 @@ class ListMovies extends Component {
             return(
               <div>
                 <h2>My Movies</h2><br/>
-                <Add/>
+                <AddMovie/>
                     <div>
                         {movieArray}
                     </div>

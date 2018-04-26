@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducers from './reducers/shows';
+import reducers from './reducers/movies';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 
 const preloadedState = {
