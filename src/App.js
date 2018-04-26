@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
-import List from './components/ListMovies';
+import Movies from './containers/Movies';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <NavBar/>
-        <List />
+        <Movies/>
       </div>
     );
   }
