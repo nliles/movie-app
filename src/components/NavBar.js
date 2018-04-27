@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
-class List extends Component {
+class NavBar extends Component {
 
     render() {
-            return(
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container">
-                <a className="navbar-brand" href="#">Navbar</a>
-            </div>
-            </nav>
-          ) 
+        return (
+            <Nav>
+                <NavItem>
+                    <NavLink href="/">Movies</NavLink>
+                </NavItem>
+            </Nav>
+        )
     }
-    
+
 }
 
-export default List;
+export default NavBar;

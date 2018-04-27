@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { ListGroup, ListGroupItem } from 'reactstrap';
+import { Media } from 'reactstrap';
 
-class MovieItem extends Component {
-
-  render() {
-    return this.props.movies.map((movie, i) => {
-      return(
-        <div key={i}>
-          <Link to={`/movies/${movie.title}`}><h3>{movie.title}</h3></Link>
-          <img src={movie.poster} alt="Movie Poster" height="42" width="42"/>
-          <button onClick={e => this.props.f(movie.title)} type="button" className="btn btn-primary">Remove</button>
-        </div>
-      );
-    });
-  }
+ const  MovieItem = ({ removeOnClick, movie }) => {
+  return (<ListGroupItem>
+    <img src={movie.poster} alt="Movie Poster" height="20%" width="20%" />
+    <div className="movieItemContent">
+      <Link to={`/movies/${movie.imdbId}`}><h3>{movie.title} - {movie.year}</h3></Link>
+      <p>{movie.plot}</p>
+      <p>{movie.genre}</p>
+    </div>
+    <button onClick={e => removeOnClick(movie.title)} type="button" className="btn movieItemBtn"><i className="fa fa-minus-circle" aria-hidden="true"></i></button>
+  </ListGroupItem>)
 }
 
-export default MovieItem;
+export default MovieItem

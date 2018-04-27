@@ -1,32 +1,30 @@
-import { SET_MOVIES, ADD_MOVIE, GET_MOVIE, REMOVE_MOVIE } from '../actions/movieActions';
+import { SET_MOVIES, ADD_MOVIE, GET_MOVIE, REMOVE_MOVIE, GET_MOVIE_SUCCESS } from '../actions/movieActions';
 
-const initialState = {
-  movies: [],
-  movie: {}
-};
+export default function reducer(state = [], action) {
 
-export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case SET_MOVIES:
-      return {
-        movies: action.movies,
-      };
     case ADD_MOVIE:
+      const foundIndex = state.movies.findIndex(movie => movie.imdbId == action.movie.imdbId);
+      if (foundIndex == -1)
+        return {
+          ...state,
+          movies: [action.movie, ...state.movies]
+        };
+    case GET_MOVIE_SUCCESS:
       return {
-        movies: state.movies.concat(action.movie),
+        ...state,
+        movie: action.movie,
       };
-    case GET_MOVIE:
-      return {
-        movie: state.movies.find(movie => movie.title === action.movie),
-      };
+
     case REMOVE_MOVIE:
-    const removeMovieArray = state.movies.slice();
-    const movie = state.movies.find(movie => movie.title === action.movie)
-    const index = removeMovieArray.indexOf(movie)
-    removeMovieArray.splice(index, 1);
-    return {
-      movies: removeMovieArray,
-    };
+      const removeMovieArray = state.movies.slice();
+      const movie = state.movies.find(movie => movie.title === action.movie)
+      const index = state.movies.slice().indexOf(movie)
+      removeMovieArray.splice(index, 1);
+      return {
+        ...state,
+        movies: removeMovieArray,
+      };
     default:
       return state;
   }
