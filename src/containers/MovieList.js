@@ -19,7 +19,9 @@ class MovieList extends Component {
 
   handleFormSubmit = (e, movieTerm) => {
     e.preventDefault();
-    this.props.addMovie(movieTerm)
+    if (movieTerm.length) {
+      this.props.addMovie(movieTerm)
+    }
   }
 
   removeMovie = (movieTitle) => {
