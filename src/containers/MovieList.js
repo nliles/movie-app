@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { searchMovies, removeMovie, addMovie } from '../actions/movieActions'
-import Form from '../components/Form';
+import MovieForm from '../components/MovieForm';
 import MovieItem from '../components/MovieItem';
 import { withRouter } from 'react-router';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import { Card, CardTitle, Container, Row, Col } from 'reactstrap';
 
 const propTypes = {
 };
@@ -31,24 +32,21 @@ class MovieList extends Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-sm-7">
-          <div className="panel panel-default">
-            <div className="panel-heading c-list">
-              <span className="title">My Movies</span>
-              <img className="popcorn" alt="popcorn icon" src="./popcorn.png" height="40" width="40" />
-            </div>
+      <Row>
+        <Col xs="7" className="col">
+            <Card className="movie_list_title">
+              <CardTitle className="title_text">My Movies</CardTitle>
+            </Card>
             <div className="list-group-item">
-              <Form handleSubmit={this.handleFormSubmit} />
+              <MovieForm handleSubmit={this.handleFormSubmit} />
             </div>
             <ListGroup>
                 {this.props.movies.map((movie) => {
                   return <MovieItem key={movie.imdbId} removeOnClick={this.removeMovie} movie={movie} />
                 })}
             </ListGroup>
-          </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     )
   }
 }
