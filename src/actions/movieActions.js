@@ -8,14 +8,14 @@ export const GET_MOVIE_SUCCESS = 'GET_MOVIE_SUCCESS';
 
 export const ADD_MOVIE_START = 'GET_MOVIES_START';
 export const ADD_MOVIE_FAIL = 'GET_MOVIES_FAIL';
-export const ADD_MOVIE = 'ADD_MOVIE';
+export const ADD_MOVIE_SUCCESS = 'ADD_MOVIE_SUCCESS';
 
 export const getMovieStart = () => ({ type: GET_MOVIE_START });
 export const getMovieSuccess = (movie) => ({ type: GET_MOVIE_SUCCESS, movie });
 export const getMovieFail = (error) => ({ type: GET_MOVIE_FAIL, error });
 
 export const addMovieStart = () => ({ type: ADD_MOVIE_START });
-export const addMovie = movie => ({ type: ADD_MOVIE, movie, });
+export const addMovieSuccess = movie => ({ type: ADD_MOVIE_SUCCESS, movie, });
 export const addMovieFail = movie => ({ type: ADD_MOVIE_FAIL, movie, });
 
 export const removeMovie = movie => ({
@@ -39,7 +39,7 @@ export function getMovie(movieId) {
 
 }
 
-export function searchMovies(movieTitle) {
+export function addMovie(movieTitle) {
 
   return dispatch => {
 
@@ -49,7 +49,7 @@ export function searchMovies(movieTitle) {
       .then((response) => response.json())
       .then((movie) => {
         const movieCamelCase = humps(movie)
-        dispatch(addMovie(movieCamelCase))
+        dispatch(addMovieSuccess(movieCamelCase))
       })
       .catch(error => { console.log('request failed', error); dispatch(addMovieFail(error)) });
     }

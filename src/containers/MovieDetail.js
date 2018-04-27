@@ -22,6 +22,7 @@ class MovieDetail extends Component {
 
 MovieDetail.propTypes = {
   movie: PropTypes.object.isRequired,
+  getMovie: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {
