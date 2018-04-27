@@ -10,6 +10,8 @@ export default function reducer(state = [], action) {
           ...state,
           movies: [action.movie, ...state.movies]
         };
+      } else {
+        return state;
       }
     case GET_MOVIE_SUCCESS:
       return {
