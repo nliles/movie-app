@@ -15,7 +15,6 @@ export default function reducer(state = [], action) {
         ...state,
         movie: action.movie,
       };
-
     case REMOVE_MOVIE:
       const removeMovieArray = state.movies.slice();
       const movie = state.movies.find(movie => movie.title === action.movie)
