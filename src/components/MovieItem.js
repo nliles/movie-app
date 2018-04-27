@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
-import { ListGroup, ListGroupItem } from 'reactstrap';
-import { Media } from 'reactstrap';
+import {ListGroupItem } from 'reactstrap';
 
  const  MovieItem = ({ removeOnClick, movie }) => {
   return (<ListGroupItem>

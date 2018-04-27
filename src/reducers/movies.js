@@ -1,11 +1,11 @@
-import { SET_MOVIES, ADD_MOVIE, GET_MOVIE, REMOVE_MOVIE, GET_MOVIE_SUCCESS } from '../actions/movieActions';
+import { ADD_MOVIE, REMOVE_MOVIE, GET_MOVIE_SUCCESS } from '../actions/movieActions';
 
 export default function reducer(state = [], action) {
 
   switch (action.type) {
     case ADD_MOVIE:
-      const foundIndex = state.movies.findIndex(movie => movie.imdbId == action.movie.imdbId);
-      if (foundIndex == -1)
+      const foundIndex = state.movies.findIndex(movie => movie.imdbId === action.movie.imdbId);
+      if (foundIndex === -1)
         return {
           ...state,
           movies: [action.movie, ...state.movies]

@@ -4,12 +4,8 @@ import { bindActionCreators } from 'redux';
 import { searchMovies, removeMovie, addMovie } from '../actions/movieActions'
 import MovieForm from '../components/MovieForm';
 import MovieItem from '../components/MovieItem';
-import { withRouter } from 'react-router';
-import { ListGroup, ListGroupItem } from 'reactstrap';
-import { Card, CardTitle, Container, Row, Col } from 'reactstrap';
-
-const propTypes = {
-};
+import { ListGroup, Card, CardTitle, Row, Col } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 class MovieList extends Component {
 
@@ -50,6 +46,10 @@ class MovieList extends Component {
     )
   }
 }
+
+MovieList.propTypes = {
+  movies: PropTypes.array.isRequired,
+};
 
 const mapStateToProps = (state) => {
   return {

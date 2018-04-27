@@ -6,11 +6,19 @@ body {
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
-
 a:link, a:visited, a:hover {
     color:black;
     text-decoration: none;
 }
+
+/* Nav Bar Cass */
+.nav_bar {
+    -webkit-box-shadow: 0 2px 2px -2px #999;
+    -moz-box-shadow: 0 2px 2px -2px #999;
+    box-shadow: 0 2px 2px -2px #999;
+}
+
+/* List page CSS */
 
 .list-group-item {
   display: flex;
@@ -19,10 +27,6 @@ a:link, a:visited, a:hover {
 
 .item_content {
     padding: 0 20px;
-}
-
-.navbar-light .navbar-brand {
-  padding-left: 5px;
 }
 
 .fa, .fa-share-alt {
@@ -60,12 +64,8 @@ a:link, a:visited, a:hover {
     margin-top: 10px;
 }
 
-.nav_bar {
-    -webkit-box-shadow: 0 2px 2px -2px #999;
-    -moz-box-shadow: 0 2px 2px -2px #999;
-    box-shadow: 0 2px 2px -2px #999;
-}
 
+/* Detail Content Page CSS */
 .movie_card{
     display: block;
     width: 1000px;
@@ -82,13 +82,6 @@ a:link, a:visited, a:hover {
     border-radius: 10px;
     transition: all 0.4s;
     box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
-  }
-
-  @media only screen and (max-width: 780px) {
-    .movie_card {
-        max-height: 425px;
-        width: 100%
-    }
 }
 
 .info_section{
@@ -102,17 +95,18 @@ a:link, a:visited, a:hover {
     overflow: auto;
 }
 
-.movie_header{
+.content_header{
     position: relative;
     padding: 25px;
     height: 35%;
 }
 
-h1{
+h1 {
     color: black;
     font-weight: 400;
 }
-h4{
+
+h4 {
     color: #555;
     font-weight: 400;
 }
@@ -126,49 +120,26 @@ h4{
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-.type{
+.type {
     display: inline-block;
     color: #959595;
     margin-left: 10px;
 }
 
-.poster {
+.content_poster {
     height: 100%;
     max-width: 40%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-@media only screen and (max-width: 600px) {
-    .poster {
-        height: auto;
-        width: auto;
-        border-bottom-left-radius: 0;
-    }
 
-    .content_title {
-        font-size: 28px;
-    }
-
-    .content_detail {
-        font-size: 16px;
-    }
-
-    .minutes, .type {
-        font-size: 12px;
-    }
-
-    .stars {
-        display: none;
-    }
-}
-
-
-.movie_desc{
+.movie_desc {
     padding: 25px;
     height: 50%;
     font-size: 14px;
 }
+
 .content_title {
     width: 80%;
 }
@@ -191,3 +162,35 @@ h4{
 .hidden {
     display: none;
 }
+
+@media only screen and (max-width: 780px) {
+    .movie_card {
+        max-height: 425px;
+        width: 100%
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .content_poster {
+        height: auto;
+        width: auto;
+        border-bottom-left-radius: 0;
+    }
+
+    .content_title {
+        font-size: 28px;
+    }
+
+    .content_detail {
+        font-size: 16px;
+    }
+
+    .minutes, .type {
+        font-size: 12px;
+    }
+
+    .stars {
+        display: none;
+    }
+}
+

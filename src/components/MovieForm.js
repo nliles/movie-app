@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Button, Form, Input } from 'reactstrap';
+import { Form, Input } from 'reactstrap';
 
 class MovieForm extends Component {
 
