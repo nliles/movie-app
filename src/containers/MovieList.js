@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { searchMovies, removeMovie, addMovie } from '../actions/movieActions'
+import { addMovie, removeMovie } from '../actions/movieActions'
 import MovieForm from '../components/MovieForm';
 import MovieItem from '../components/MovieItem';
 import { ListGroup, Card, CardTitle, Row, Col } from 'reactstrap';
@@ -13,13 +13,13 @@ class MovieList extends Component {
 
     if (!this.props.movies.length) {
       const myMovies = ["Brooklyn", "Mean Girls", "When Harry Met Sally"]
-      myMovies.forEach((movie) => this.props.searchMovies(movie))
+      myMovies.forEach((movie) => this.props.addMovie(movie))
     }
   }
 
   handleFormSubmit = (e, movieTerm) => {
     e.preventDefault();
-    this.props.searchMovies(movieTerm)
+    this.props.addMovie(movieTerm)
   }
 
   removeMovie = (movieTitle) => {
@@ -49,6 +49,8 @@ class MovieList extends Component {
 
 MovieList.propTypes = {
   movies: PropTypes.array.isRequired,
+  removeMovie: PropTypes.func.isRequired,
+  addMovie: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -58,9 +60,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  searchMovies,
+  addMovie,
   removeMovie,
-  addMovie
 }, dispatch)
 
 export default connect(
