@@ -6,21 +6,18 @@ import ShowMovieItem from '../components/ShowMovieItem';
 
 class ShowMovie extends Component {
 
-    componentWillMount() {
+  constructor(props) {
+    super(props)
+    };
+
+    componentDidMount() {
         this.props.getMovie(this.props.match.params.id)
     }
 
-    componentWillReceiveProps = (nextProps) => {
-      console.log(nextProps)
-    }
-    
-
-	render() {
-        if(this.props.movie) {
+	render()  {
             return(
-                <h1>"hi"</h1>
+                <ShowMovieItem movie={this.props.movie}/>
           ) 
-        }
    }
     
 }

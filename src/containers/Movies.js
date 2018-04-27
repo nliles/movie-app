@@ -19,33 +19,27 @@ class Movies extends Component {
     this.props.removeMovie(movieTitle)
   }
 
-  toggleSearch() {
-    var element = document.getElementById("addContainer");
-    element.classList.toggle("mystyle");
-  }
-
 	render() {
-            return(
-<div class="container">
+  return(
+    <div class="container">
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-offset-3 col-sm-7">
-            <div class="panel panel-default">
-                <div class="panel-heading c-list">
-                    <span class="title">My Movies</span>
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="panel panel-default">
+                    <div class="panel-heading c-list">
+                        <span class="title">My Movies</span>
+                    </div>
+                    
+                    <div className="list-group-item">
+                      <AddMovie/>
+                    </div>
+                    
+                  <MovieItem removeOnClick={this.removeMovie} movies={this.props.movies}/>
                 </div>
-                
-                <div className="list-group-item">
-                  <AddMovie/>
-                </div>
-                
-              <MovieItem removeOnClick={this.removeMovie} movies={this.props.movies}/>
             </div>
-        </div>
-	</div>
-</div>
-
-) 
+      </div>
+    </div>
+   ) 
   }
 }
 
