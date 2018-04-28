@@ -32,8 +32,8 @@ class MovieList extends Component {
     return (
       <Row>
         <Col xs="7" className="col">
-            <Card className="movie_list_title">
-              <CardTitle className="title_text">My Movies</CardTitle>
+            <Card className="movie-list-title">
+              <CardTitle className="title-text">My Movies</CardTitle>
             </Card>
             <div className="list-group-item">
               <MovieForm handleSubmit={this.handleFormSubmit} />

@@ -12,7 +12,7 @@ a:link, a:visited, a:hover {
 }
 
 /* Nav Bar Cass */
-.nav_bar {
+.nav-bar {
     -webkit-box-shadow: 0 2px 2px -2px #999;
     -moz-box-shadow: 0 2px 2px -2px #999;
     box-shadow: 0 2px 2px -2px #999;
@@ -25,7 +25,7 @@ a:link, a:visited, a:hover {
   justify-content: space-between;
 }
 
-.item_content {
+.item-content {
     padding: 0 20px;
 }
 
@@ -34,7 +34,7 @@ a:link, a:visited, a:hover {
   font-size: 32px;
 }
 
-.movie_list_title {
+.movie-list-title {
   background:#4db6ac;
   border-radius: 0;
 }
@@ -51,12 +51,12 @@ a:link, a:visited, a:hover {
     }
 }
 
-.flex_container {
+.flex-container {
   display: flex;
   width: 100%;
 }
 
-.title_text {
+.title-text {
     display: inline-block;
     font-size: 1.7em;
     font-weight: bold;
@@ -66,7 +66,7 @@ a:link, a:visited, a:hover {
 
 
 /* Detail Content Page CSS */
-.movie_card{
+.movie-card{
     display: block;
     width: 1000px;
     height: 550px;
@@ -82,7 +82,7 @@ a:link, a:visited, a:hover {
     box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
 }
 
-.info_section{
+.info-section{
     position: relative;
     width: 60%;
     float: right;
@@ -93,7 +93,7 @@ a:link, a:visited, a:hover {
     overflow: auto;
 }
 
-.content_header{
+.content-header{
     position: relative;
     padding: 25px;
     height: 35%;
@@ -124,7 +124,7 @@ h4 {
     margin-left: 10px;
 }
 
-.content_poster {
+.content-poster {
     height: 100%;
     max-width: 40%;
     border-top-left-radius: 10px;
@@ -132,17 +132,17 @@ h4 {
 }
 
 
-.movie_desc {
+.movie-desc {
     padding: 25px;
     height: 50%;
     font-size: 14px;
 }
 
-.content_title {
+.content-title {
     width: 80%;
 }
 
-.movie_score {
+.movie-score {
     bottom: 0;
     left: 0;
     height: 10%;
@@ -162,7 +162,7 @@ h4 {
 }
 
 @media only screen and (max-width: 780px) {
-    .movie_card {
+    .movie-card {
         max-height: 425px;
         width: 100%
     }
@@ -180,15 +180,15 @@ h4 {
         border-bottom-left-radius: 0;
     }
     
-    .movie_desc {
+    .movie-desc {
         padding: 0 25px;
     }
 
-    .content_title {
+    .content-title {
         font-size: 28px;
     }
 
-    .content_detail {
+    .content-detail {
         font-size: 16px;
     }
 
